@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
-import { Role } from "../models/roleModel";
-
+import { RoleModel as Role } from "../models/roleModel";
 const MONGO_URL = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/agri-db";
 
 async function seedRoles() {

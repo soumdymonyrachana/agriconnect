@@ -1,10 +1,8 @@
-import mongoose, { Schema, Document } from "mongoose";
+import { Schema, model, Document } from "mongoose";
 
 export interface IRole extends Document {
   name: string;
-  description?: string; // optional description of the role
-  createdAt?: Date;
-  updatedAt?: Date;
+  description?: string;
 }
 
 const roleSchema = new Schema<IRole>(
@@ -12,7 +10,7 @@ const roleSchema = new Schema<IRole>(
     name: { type: String, required: true, unique: true },
     description: { type: String },
   },
-  { timestamps: true } // adds createdAt and updatedAt automatically
+  { timestamps: true }
 );
 
-export const Role = mongoose.model<IRole>("Role", roleSchema);
+export const RoleModel = model<IRole>("Role", roleSchema);

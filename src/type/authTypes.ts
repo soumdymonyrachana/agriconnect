@@ -1,8 +1,8 @@
-export interface IUser extends Document {
-  name: string;
-  phone: string;
-  address: string;
+export interface IUser {
+  full_name: string;
   email: string;
+  phone: string;
   password: string;
-  comparePassword(candidatePassword: string): Promise<boolean>;
+  address?: string;
+  role?: string;
 }
